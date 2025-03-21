@@ -10,17 +10,21 @@ class LoginPage(Base):
     def __init__(self, driver):
         super().__init__(driver)
 
-    url = 'https://www.saucedemo.com/'  # url тестируемого сайта
-    login_standart_user = 'standard_user'
-    password_all = 'secret_sauce'
+    url = 'https://www.pleza.ru/'  # url тестируемого сайта
+    login_standart_user = 'maria'
+    password_all = '123456'
 
     # Locators
-    user_name = "//input[@id='user-name']"
-    password = "//input[@id='password']"
-    login_button = "//input[@id='login-button']"
-    main_word = "//span[@class='title']"
+    log_in = "//a[@href='/login/?backurl=%2F']"
+    user_name = "//input[@name='USER_LOGIN']"
+    password = "//input[@name='USER_PASSWORD']"
+    login_button = "//input[@value='Войти']"
+    main_word = "//a[@href='/personal/profile/?backurl=%2F']"
 
     # Getters
+    def get_log_in(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.log_in)))
+
     def get_user_name(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.user_name)))
     def get_password(self):
@@ -32,6 +36,10 @@ class LoginPage(Base):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.main_word)))
 
     # Actions
+    def click_log_in(self):
+        self.get_log_in().click()
+        print('Click log in')
+
     def input_user_name(self, user_name):
         self.get_user_name().send_keys(user_name)
         print('Input user name')
@@ -48,7 +56,8 @@ class LoginPage(Base):
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.get_current_url()
+        self.click_log_in()
         self.input_user_name(self.login_standart_user)    # вызов метода по вводу информации в поле Логин
         self.input_password(self.password_all)   # вызов метода по вводу информации в поле Пароль
         self.click_login_button()   # клик по кнопке Войти
-        self.assert_word(self.get_main_word(), 'Products')
+        self.assert_word(self.get_main_word(), 'Мария')
