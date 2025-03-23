@@ -49,5 +49,6 @@ class CartPage(Base):
         self.assert_word(self.get_cart_product_name(), verification_name_product)
         self.assert_cart_product_price(verification_price_product)
         self.assert_cart_total_price()
+        self.get_screenshot()
         self.click_make_order_button()
         self.assert_url('https://vasko.ru/personal/order/delivery/')
