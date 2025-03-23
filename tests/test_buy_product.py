@@ -10,7 +10,7 @@ from pages.cart_page import CartPage
 from pages.client_information_page import ClientInformationPage
 from pages.finish_page import FinishPage
 from pages.login_page import LoginPage
-from pages.main_page import MainPage
+from pages.household_goods_page import HouseholdGoodsPage
 from pages.payment_page import PaymentPage
 
 
@@ -22,25 +22,23 @@ def test_buy_product(set_up):
     service = FirefoxService(GeckoDriverManager().install())
     driver = webdriver.Firefox(service=service, options=options)
 
-    #driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-
     login = LoginPage(driver)
     login.authorization()   # Запуск метода авторизации пользователя
 
-    mp = MainPage(driver)
-    mp.select_products_1()
+    hgp = HouseholdGoodsPage(driver)
+    hgp.select_washing_machines() # Запуск метода выбора товара
 
     cp = CartPage(driver)
     cp.product_confirmation()
 
-    cip = ClientInformationPage(driver)
-    cip.input_information()
+    # cip = ClientInformationPage(driver)
+    # cip.input_information()
+    #
+    # p = PaymentPage(driver)
+    # p.payment()
+    #
+    # f = FinishPage(driver)
+    # f.finish()
 
-    p = PaymentPage(driver)
-    p.payment()
-
-    f = FinishPage(driver)
-    f.finish()
-
-    time.sleep(3)
-    driver.quit()
+    # time.sleep(3)
+    # driver.quit()

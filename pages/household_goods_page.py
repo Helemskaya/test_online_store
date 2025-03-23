@@ -120,3 +120,4 @@ class HouseholdGoodsPage(Base):
         self.click_select_product()
         self.click_cart()
         self.click_go_to_cart()
+        self.assert_url('https://vasko.ru/personal/cart/')

@@ -20,8 +20,9 @@ class Base:
     def get_screenshot(self):
         """Создание скриншота"""
         now_date = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M")
-        name_screenshot = 'screenshot' + now_date + '.png'
-        self.driver.save_screenshot(f'screen/{name_screenshot}')
+        name_screenshot = 'screenshot ' + now_date + '.png'
+        path = 'C:\\Users\\Екатерина\\PycharmProjects\\test_online_store\\screen'
+        self.driver.save_screenshot(f"{path}/{name_screenshot}")
         print('Screenshot taken')
 
     def assert_url(self, result):
