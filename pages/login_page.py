@@ -58,7 +58,7 @@ class LoginPage(Base):
     def authorization(self):
         """Авторизация в системе"""
         self.driver.get(self.url)
-        self.driver.maximize_window()   # РАСКОМЕНТИТЬ НИЖЕ!!!
+        self.driver.maximize_window()   
         self.get_current_url()
         self.click_login_button()
         self.input_user_name(self.login_test_user)    # вызов метода по вводу информации в поле Логин
