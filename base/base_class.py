@@ -1,6 +1,5 @@
 import datetime
 
-
 class Base:
     """Базовый класс, содержащий универсальные методы """
     def __init__(self, driver):

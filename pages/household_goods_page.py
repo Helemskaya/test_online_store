@@ -1,10 +1,7 @@
-import time
-
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from base.base_class import Base
 
 verification_name_product = 'Фронтальная стиральная машина Candy CSW4 365D/2 Steam'
