@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
+
 fake = Faker("en_US")
 
 class ClientInformationPage(Base):
@@ -47,9 +49,11 @@ class ClientInformationPage(Base):
     # Methods
     def input_contact_information(self):
         """Заполнить контактную информацию клиента"""
+        Logger.add_start_steep(method='input_contact_information')
         self.get_current_url()
         self.input_contact_person(self.fake_contact_person)
         self.input_email(self.fake_email)
         self.input_phone_number(self.fake_phone_number)
         self.click_forth_button()
         self.assert_url('https://vasko.ru/personal/order/confirm/')
+        Logger.add_end_step(url=self.driver.current_url, method='input_contact_information')

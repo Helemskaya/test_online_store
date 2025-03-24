@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 verification_name_product = 'Фронтальная стиральная машина Candy CSW4 365D/2 Steam'
 verification_price_product = 'Цена: 32 500₽'
@@ -101,6 +102,7 @@ class HouseholdGoodsPage(Base):
     # Methods
     def select_washing_machines(self):
         """Выбор товара по установленным фильтрам"""
+        Logger.add_start_steep(method='select_washing_machines')
         self.get_current_url()
         self.click_goods_for_house()
         self.click_washing_machines()
@@ -118,3 +120,4 @@ class HouseholdGoodsPage(Base):
         self.click_cart()
         self.click_go_to_cart()
         self.assert_url('https://vasko.ru/personal/cart/')
+        Logger.add_end_step(url=self.driver.current_url, method='select_washing_machines')
