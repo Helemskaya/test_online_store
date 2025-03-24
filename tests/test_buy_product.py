@@ -1,4 +1,5 @@
 import time
+import allure
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,6 +13,7 @@ from pages.login_page import LoginPage
 from pages.household_goods_page import HouseholdGoodsPage
 from pages.сontact_information_page import ClientInformationPage
 
+@allure.description("Test buy product")
 def test_buy_product(set_up):
     """Тест по покупке товара, включает в себя
     авторизацию, выбор товара, заполнение данных получателя"""

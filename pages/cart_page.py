@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -45,12 +46,13 @@ class CartPage(Base):
     # Methods
     def product_confirmation(self):
         """Подтверждение выбора товара"""
-        Logger.add_start_steep(method='product_confirmation')
-        self.get_current_url()
-        self.assert_word(self.get_cart_product_name(), verification_name_product)
-        self.assert_cart_product_price(verification_price_product)
-        self.assert_cart_total_price()
-        self.get_screenshot()
-        self.click_make_order_button()
-        self.assert_url('https://vasko.ru/personal/order/delivery/')
-        Logger.add_end_step(url=self.driver.current_url, method='product_confirmation')
+        with allure.step("Product confirmation"):
+            Logger.add_start_steep(method='product_confirmation')
+            self.get_current_url()
+            self.assert_word(self.get_cart_product_name(), verification_name_product)
+            self.assert_cart_product_price(verification_price_product)
+            self.assert_cart_total_price()
+            self.get_screenshot()
+            self.click_make_order_button()
+            self.assert_url('https://vasko.ru/personal/order/delivery/')
+            Logger.add_end_step(url=self.driver.current_url, method='product_confirmation')

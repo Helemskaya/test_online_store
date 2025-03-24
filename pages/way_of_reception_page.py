@@ -1,8 +1,8 @@
+import allure
 from faker import Faker
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from base.base_class import Base
 from utilities.logger import Logger
 
@@ -50,11 +50,12 @@ class WayReceptionPage(Base):
     # Methods
     def input_reception_information(self):
         """Заполнить информацию о способе получения"""
-        Logger.add_start_steep(method='input_reception_information')
-        self.get_current_url()
-        self.input_profile_name(self.fake_profile_name)
-        self.input_street(self.fake_street)
-        self.input_house_number(self.fake_house_number)
-        self.click_continue_button()
-        self.assert_url('https://vasko.ru/personal/order/contacts/')
-        Logger.add_end_step(url=self.driver.current_url, method='input_reception_information')
+        with allure.step("Input reception information"):
+            Logger.add_start_steep(method='input_reception_information')
+            self.get_current_url()
+            self.input_profile_name(self.fake_profile_name)
+            self.input_street(self.fake_street)
+            self.input_house_number(self.fake_house_number)
+            self.click_continue_button()
+            self.assert_url('https://vasko.ru/personal/order/contacts/')
+            Logger.add_end_step(url=self.driver.current_url, method='input_reception_information')

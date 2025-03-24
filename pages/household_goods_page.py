@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -102,22 +103,23 @@ class HouseholdGoodsPage(Base):
     # Methods
     def select_washing_machines(self):
         """Выбор товара по установленным фильтрам"""
-        Logger.add_start_steep(method='select_washing_machines')
-        self.get_current_url()
-        self.click_goods_for_house()
-        self.click_washing_machines()
-        self.assert_word(self.get_test_word(), 'Стиральные машины с фронтальной загрузкой')
-        self.input_filter_min_price(30000)
-        self.input_filter_max_price(35000)
-        self.click_apply_price_filter()
-        self.click_checkbox_manufacturer()
-        self.click_apply_manufacturer()
-        self.click_with_dryer()
-        self.get_screenshot()
-        self.assert_word(self.get_product_name(), verification_name_product)
-        self.assert_word(self.get_product_price(), verification_price_product)
-        self.click_select_product()
-        self.click_cart()
-        self.click_go_to_cart()
-        self.assert_url('https://vasko.ru/personal/cart/')
-        Logger.add_end_step(url=self.driver.current_url, method='select_washing_machines')
+        with allure.step("Select washing machines"):
+            Logger.add_start_steep(method='select_washing_machines')
+            self.get_current_url()
+            self.click_goods_for_house()
+            self.click_washing_machines()
+            self.assert_word(self.get_test_word(), 'Стиральные машины с фронтальной загрузкой')
+            self.input_filter_min_price(30000)
+            self.input_filter_max_price(35000)
+            self.click_apply_price_filter()
+            self.click_checkbox_manufacturer()
+            self.click_apply_manufacturer()
+            self.click_with_dryer()
+            self.get_screenshot()
+            self.assert_word(self.get_product_name(), verification_name_product)
+            self.assert_word(self.get_product_price(), verification_price_product)
+            self.click_select_product()
+            self.click_cart()
+            self.click_go_to_cart()
+            self.assert_url('https://vasko.ru/personal/cart/')
+            Logger.add_end_step(url=self.driver.current_url, method='select_washing_machines')
