@@ -1,0 +1,66 @@
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-24 18:18:35.586821
+Start name method: authorization
+
+End time: 2025-03-24 18:18:40.743817
+End name method: authorization
+URL: https://vasko.ru/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-24 18:18:40.744820
+Start name method: select_washing_machines
+
+End time: 2025-03-24 18:18:54.286163
+End name method: select_washing_machines
+URL: https://vasko.ru/personal/cart/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-24 18:18:54.286163
+Start name method: product_confirmation
+
+End time: 2025-03-24 18:18:55.518023
+End name method: product_confirmation
+URL: https://vasko.ru/personal/order/delivery/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-24 18:18:55.518023
+Start name method: input_reception_information
+
+End time: 2025-03-24 18:18:56.948446
+End name method: input_reception_information
+URL: https://vasko.ru/personal/order/contacts/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-24 18:18:56.949449
+Start name method: input_contact_information
+
+End time: 2025-03-24 18:18:58.482074
+End name method: input_contact_information
+URL: https://vasko.ru/personal/order/confirm/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-24 18:18:58.483079
+Start name method: finish
+
+End time: 2025-03-24 18:18:58.579397
+End name method: finish
+URL: https://vasko.ru/personal/order/confirm/
+
+-----

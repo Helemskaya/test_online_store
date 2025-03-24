@@ -1,0 +1,49 @@
+
+Start test
+Current url https://vasko.ru/
+Click login button
+Input user name
+Input password
+Click authorization button
+Click user preview button
+Good value word
+Current url https://vasko.ru/
+Click goods for house
+Click washing machines
+Good value word
+Input min price
+Input max price
+Click apply price filter
+Click checkbox manufacturer
+Click apply manufacturer
+Click with dryer
+Screenshot taken
+Good value word
+Good value word
+Click select product
+Click cart
+Click go to cart
+Good value url
+Current url https://vasko.ru/personal/cart/
+Good value word
+Good cart product price
+Good total cart product price
+Screenshot taken
+Click make order button
+Good value url
+Current url https://vasko.ru/personal/order/delivery/
+Input profile name
+Input street
+Input house number
+Click continue button
+Good value url
+Current url https://vasko.ru/personal/order/contacts/
+Input contact person
+Input email
+Input phone number
+Click forth button
+Good value url
+Current url https://vasko.ru/personal/order/confirm/
+Screenshot taken
+
+Finish test
