@@ -18,7 +18,7 @@ class Base:
 
     def get_screenshot(self):
         """Создание скриншота"""
-        name_screenshot = f"..\\screen\\screenshot_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".png"
+        name_screenshot = f".\\screen\\screenshot_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".png"
         self.driver.save_screenshot(name_screenshot)
         print('Screenshot taken')
 
