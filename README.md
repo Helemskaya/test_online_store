@@ -70,4 +70,5 @@ README.md - содержит описание данного проекта
 
 Запуск теста через терминал:
 py.test --alluredir=%allure_result_folder% ./tests
+
 allure serve %allure_result_folder%
