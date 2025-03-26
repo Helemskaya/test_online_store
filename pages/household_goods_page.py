@@ -115,7 +115,6 @@ class HouseholdGoodsPage(Base):
             self.click_checkbox_manufacturer()
             self.click_apply_manufacturer()
             self.click_with_dryer()
-            self.get_screenshot()
             self.assert_word(self.get_product_name(), verification_name_product)
             self.assert_word(self.get_product_price(), verification_price_product)
             self.click_select_product()
