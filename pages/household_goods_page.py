@@ -7,7 +7,7 @@ from base.base_class import Base
 from utilities.logger import Logger
 
 verification_name_product = 'Фронтальная стиральная машина Candy CSW4 365D/2 Steam'
-verification_price_product = 'Цена: 32 500₽'
+verification_price_product = 'Цена: 33 000₽'
 
 class HouseholdGoodsPage(Base):
     """Класс бытовая техника для дома"""
@@ -21,7 +21,7 @@ class HouseholdGoodsPage(Base):
     filter_min_price = "(//input[@name='price_min'])[2]"
     filter_max_price = "(//input[@name='price_max'])[2]"
     apply_price_filter = "(//button[@class='btn btn_outline btn_primary filter__submit'])[4]"
-    checkbox_manufacturer = "(//span[@class='checkbox__box'])[29]"
+    checkbox_manufacturer = "(//span[@class='checkbox__box'])[30]"
     apply_manufacturer = "(//button[@class='btn btn_outline btn_primary filter__submit'])[3]"
     with_dryer = "(//a[@class='filter__option filter__option_link'])[20]"
     select_product = "//button[@id='js-BuyProductList1807713']"

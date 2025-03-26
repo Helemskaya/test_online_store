@@ -15,7 +15,7 @@ class CartPage(Base):
     # Locators
     cart_product_name = "//a[@href='/to_catalog/action_goodDesc/id_1807713/']"
     cart_product_price = "//div[@class='basket-price']"
-    cart_total_price = "//div[contains(text(), 'Общая стоимость товаров: 32 500₽')]"
+    cart_total_price = "//div[contains(text(), 'Общая стоимость товаров: 33 000₽')]"
     make_order_button = "//a[@class='btn btn_primary basket-submit__btn']"
 
     # Getters
